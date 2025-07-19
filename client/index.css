@@ -1,0 +1,431 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --background-color: #f8f9fa;
+  --text-color: #333;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.897);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.header-title h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+
+.header-title p {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.book-card {
+  text-decoration: none;
+  color: inherit;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.book-image-container {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 150%;
+  flex-shrink: 0;
+}
+
+.book-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: opacity var(--transition-speed), transform var(--transition-speed);
+}
+
+.book-card:hover .book-image {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.book-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.book-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.book-author {
+  color: #666;
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.book-description {
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  color: #555;
+  flex: 1;
+  min-height: 3rem;
+  max-height: 4.5rem;
+  overflow-y: auto;
+  line-height: 1.5;
+}
+
+.category {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 15px;
+  font-size: 0.8rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.book-section {
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.book-section h2 {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eee;
+}
+
+nav {
+  background-color: transparent;
+  padding: 0;
+  position: static;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.swiper-container {
+  width: 100%;
+  height: 300px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .ss-image {
+  width: 20%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+.ss-image {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.dropmenu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+.dropmenu li {
+  position: relative;
+}
+.dropmenu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.dropmenu a:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+.hidden {
+  display: none !important;
+}
+
+/* 目次 (Table of Contents) */
+.toc-container {
+  position: fixed;
+  top: 100px;
+  left: 10px;
+  width: 200px;
+}
+.toc {
+  list-style: none;
+  padding: 0;
+}
+.toc li {
+  margin-bottom: 0.5rem;
+}
+
+/* モーダル */
+.modal {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5); display: flex;
+  justify-content: center; align-items: center;
+}
+.modal.hidden {
+  display: none;
+}
+.modal-content {
+  background: #fff; padding: 20px; border-radius: 5px;
+  width: 90%; max-width: 400px; position: relative;
+}
+.modal-close {
+  position: absolute; top: 10px; right: 10px;
+  cursor: pointer; font-size: 1.5rem;
+}
+.rating {
+  margin: 0.5rem 0;
+}
+.star {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-right: 0.2rem;
+}
+.star.filled {
+  color: gold;
+}
+.review {
+  margin-bottom: 1rem;
+}
+.review-text {
+  width: 100%;
+  height: 3rem;
+  resize: vertical;
+  margin-bottom: 0.3rem;
+}
+.review-submit {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.9rem;
+}
+
+/* レビュートグルボタンのスタイル改善 */
+.review-toggle {
+  background-color: var(--secondary-color);
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.review-toggle:hover {
+  background-color: darken(var(--secondary-color), 10%);
+  transform: translateY(-2px);
+}
+.review-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+}
+
+/* レビューコンテナをカテゴリ横に配置 */
+.review-container {
+  display: inline-block;
+  position: relative;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+.review-container .review-toggle {
+  display: inline-block;
+}
+
+
+/* .review {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  z-index: 10;
+} */
+
+追加するCSS
+/* .review-container .review {
+  /* デフォルトは非表示 */
+
+*/
+
+/* .hidden クラスがない状態（開いた状態）だけ表示 */
+.review-container .review:not(.hidden) {
+  display: block !important;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  z-index: 10;
+}
+
+
+/* 読書進捗トラッカー */
+.progress-container {
+  display: flex;
+  justify-content: center; /* 横幅の中心に配置 */
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.75rem auto 0; /* 上に少し余白を入れ、自動で左右中央揃え */
+}
+.progress-decrement,
+.progress-increment {
+  background-color: var(--secondary-color);
+  color: #fff;
+  border: none;
+  border-radius: 50%; /* 丸いボタン */
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, background-color 0.3s;
+}
+.progress-decrement:hover,
+.progress-increment:hover {
+  transform: scale(1.1);
+  background-color: #2874a6; /* 少し濃い色に */
+}
+.progress-canvas {
+  display: block;
+}
+
+/* カテゴリとレビューのグループ */
+.cat-review-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center; /* グループ全体を中央配置 */
+  margin-top: 1rem; /* カード下部から少しスペース */
+}
+
+/* ランキング関連スタイル */
+.ranking-label {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: #FFD700;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+#ranking .col-md-4 {
+  position: relative;
+}
+
+#ranking .book-card {
+  margin-top: 20px;
+}
