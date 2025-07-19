@@ -94,7 +94,13 @@ client/
 
 このプロジェクトはGitHub Pagesでホストされており、以下のURLでアクセスできます：
 
-[デプロイされたサイトURL]
+🌐 **ライブデモ**: https://tonabee.github.io/book-recommendation-site/
+
+## デプロイ情報
+
+- **リポジトリ**: https://github.com/TONABEE/book-recommendation-site
+- **配信ブランチ**: main
+- **ビルド状況**: 自動デプロイ有効
 
 ## ライセンス
 
