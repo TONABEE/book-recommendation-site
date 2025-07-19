@@ -1,0 +1,63 @@
+nav {
+  background-color: transparent;
+  padding: 0;
+  position: static;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.dropmenu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+.dropmenu li {
+  position: relative;
+}
+.dropmenu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.dropmenu a:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+/* 目次 (Table of Contents) */
+.toc-container {
+  position: fixed;
+  top: 100px;
+  left: 10px;
+  width: 200px;
+}
+.toc {
+  list-style: none;
+  padding: 0;
+}
+.toc li {
+  margin-bottom: 0.5rem;
+}

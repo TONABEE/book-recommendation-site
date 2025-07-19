@@ -1,0 +1,11 @@
+/* メインCSSファイル - 分割されたCSSファイルをインポート */
+@import url('css/variables.css');
+@import url('css/base.css');
+@import url('css/header.css');
+@import url('css/book-cards.css');
+@import url('css/navigation.css');
+@import url('css/slideshow.css');
+@import url('css/modal.css');
+@import url('css/progress.css');
+@import url('css/ranking.css');
+@import url('css/responsive.css');

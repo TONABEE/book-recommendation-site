@@ -1,0 +1,22 @@
+/* ランキング関連スタイル */
+.ranking-label {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: #FFD700;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+#ranking .col-md-4 {
+  position: relative;
+}
+
+#ranking .book-card {
+  margin-top: 20px;
+}
